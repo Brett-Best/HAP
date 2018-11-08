@@ -47,7 +47,7 @@ func characteristics(device: Device) -> Responder {
                 }
 
                 var value: Protocol.Value?
-                switch characteristic.getValue() {
+                switch characteristic.getValue(fromChannel: channel) {
                 case let _value as Double: value = .double(_value)
                 case let _value as Float: value = .double(Double(_value))
                 case let _value as UInt8: value = .int(Int(_value))
