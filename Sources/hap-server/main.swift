@@ -20,16 +20,6 @@ if CommandLine.arguments.contains("--recreate") {
     try storage.write(Data())
 }
 
-//
-// Register for a free account with OpenWeatherMap and obtain a personal appid
-//
-// https://home.openweathermap.org/api_keys
-//
-let appid = "033d.........................064"
-
-let weather = OpenWeather(name: "Singapore", lat: 1.35, lon: 103.8, appid: appid)
-let openWeatherSensor = Accessory.OpenWeatherThermometer(weather)
-
 let livingRoomLightbulb = Accessory.Lightbulb(info: Service.Info(name: "Living Room", serialNumber: "00002"))
 let bedroomNightStand = Accessory.Lightbulb(info: Service.Info(name: "Bedroom", serialNumber: "00003"))
 
@@ -38,7 +28,6 @@ let device = Device(
     setupCode: "123-44-321",
     storage: storage,
     accessories: [
-        openWeatherSensor,
         livingRoomLightbulb,
         bedroomNightStand
 //        Accessory.Door(info: Service.Info(name: "Front Door", serialNumber: "00005")),
