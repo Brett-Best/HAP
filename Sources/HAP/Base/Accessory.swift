@@ -127,7 +127,7 @@ open class Accessory: JSONSerializable {
 /// of a given accessory) in order to make the accessory react accordingly.
 /// For example, you might want to update the value of certain characteristics
 /// if the HAP controller is showing interest or makes a change.
-
+///
 public protocol AccessoryDelegate: class {
     /// Characteristic's value was changed by controller. Used for notifying
     func characteristic<T>(
